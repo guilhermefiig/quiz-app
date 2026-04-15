@@ -1,9 +1,20 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import styles from "./QuestionCard.module.css";
+
+function shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
 
 export default function QuestionCard({ question, number }) {
   const [selected, setSelected] = useState(null);
   const [answered, setAnswered] = useState(false);
+
+  const shuffledOptions = useMemo(() => shuffle(question.options), [question.id]);
 
   function handleSelect(optionId) {
     if (answered) return;
@@ -24,7 +35,7 @@ export default function QuestionCard({ question, number }) {
       <p className={styles.questionText}>{question.text}</p>
 
       <div className={styles.options}>
-        {question.options.map((option) => {
+        {shuffledOptions.map((option) => {
           let optionClass = styles.option;
 
           if (answered) {

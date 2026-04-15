@@ -1,12 +1,26 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { aulas } from "./data/questions";
 import QuestionCard from "./components/QuestionCard";
 import styles from "./App.module.css";
 
+function shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
 export default function App() {
   const [activeAula, setActiveAula] = useState(1);
 
-  const currentAula = aulas.find((a) => a.id === activeAula);
+  const shuffledAulas = useMemo(
+    () => aulas.map((aula) => ({ ...aula, questions: shuffle(aula.questions) })),
+    []
+  );
+
+  const currentAula = shuffledAulas.find((a) => a.id === activeAula);
 
   return (
     <div className={styles.app}>
