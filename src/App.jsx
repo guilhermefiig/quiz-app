@@ -63,7 +63,7 @@ export default function App() {
         ) : (
           <div className={styles.questionList}>
             {currentAula.questions.map((q, index) => (
-              <QuestionCard key={q.id} question={q} number={index + 1} />
+              <QuestionCard key={`${currentAula.id}-${q.id}`} question={q} number={index + 1} />
             ))}
           </div>
         )}
