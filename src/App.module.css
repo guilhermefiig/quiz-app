@@ -1,0 +1,155 @@
+.app {
+  min-height: 100vh;
+  background: #f0f4f8;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* ── Header ── */
+.header {
+  background: linear-gradient(135deg, #1e3a5f 0%, #2d6cdf 100%);
+  padding: 32px 24px;
+  text-align: center;
+}
+
+.headerInner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 6px 0;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.78);
+  margin: 0;
+}
+
+/* ── Tabs ── */
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 20px 16px 0;
+  flex-wrap: wrap;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 22px;
+  border-radius: 8px;
+  border: 2px solid #d1dbe8;
+  background: #ffffff;
+  color: #4a5568;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  letter-spacing: 0.03em;
+}
+
+.tab:hover {
+  border-color: #2d6cdf;
+  color: #2d6cdf;
+}
+
+.tabActive {
+  background: #2d6cdf;
+  border-color: #2d6cdf;
+  color: #ffffff;
+}
+
+.tabActive:hover {
+  color: #ffffff;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 5px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.3);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.tabActive .badge {
+  background: rgba(255, 255, 255, 0.3);
+  color: white;
+}
+
+.tab:not(.tabActive) .badge {
+  background: #e8edf3;
+  color: #4a5568;
+}
+
+/* ── Main ── */
+.main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 28px 16px 48px;
+}
+
+.aulaHeader {
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid #e0e8f0;
+}
+
+.aulaTitle {
+  font-size: 22px;
+  font-weight: 800;
+  color: #1a2332;
+  margin: 0 0 4px 0;
+}
+
+.aulaSubtitle {
+  font-size: 14px;
+  color: #6b7a8d;
+  margin: 0;
+}
+
+/* ── Question list ── */
+.questionList {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Empty state ── */
+.empty {
+  text-align: center;
+  padding: 64px 24px;
+  background: #ffffff;
+  border-radius: 12px;
+  border: 2px dashed #d1dbe8;
+}
+
+.emptyIcon {
+  font-size: 48px;
+  margin-bottom: 12px;
+}
+
+.emptyText {
+  font-size: 18px;
+  font-weight: 700;
+  color: #4a5568;
+  margin: 0 0 6px 0;
+}
+
+.emptyHint {
+  font-size: 14px;
+  color: #8a98a8;
+  margin: 0;
+}
